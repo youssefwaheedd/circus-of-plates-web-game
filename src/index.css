@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+#root {
+  padding: 0;
+}
+
+.game-board {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.clown {
+  position: absolute;
+  width: 10vw; /* Responsive width */
+  bottom: 0;
+}
+
+.shape {
+  position: absolute;
+  width: 5vw; /* Responsive width */
+}
+
+/* Example media query for different screen sizes */
+@media (max-width: 600px) {
+  .clown {
+    width: 15vw; /* Increase clown size on smaller screens */
+  }
+
+  .shape {
+    width: 7vw; /* Increase shape size on smaller screens */
+  }
+}

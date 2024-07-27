@@ -1,0 +1,34 @@
+body,
+html,
+#root,
+.App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.App {
+  position: relative;
+  z-index: 1;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/circus.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .background-container {
+    background-image: url("/circus-small.png");
+  }
+}
