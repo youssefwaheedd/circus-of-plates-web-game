@@ -3,15 +3,17 @@
 // src/factory/ShapeFactory.js
 import React from "react";
 import Rectangle from "../components/Rectangle";
-import Plate from "../components/Plate";
+import Bomb from "../components/Bomb";
 
-const shapes = ["Rectangle"];
+
 
 const getRandomInt = (min, max) =>
   Math.floor(Math.random() * (max - min)) + min;
 
 export function createRandomShape (props){
   const { gameStrategy } = props;
+  const shapes = gameStrategy==='easy'?["Rectangle"]:["Rectangle", "Bomb"];
+  console.log(shapes);
   const type = shapes[getRandomInt(0, shapes.length)];
   const posX = getRandomInt(0, window.innerWidth - 100);
   const posY = 0;
@@ -52,13 +54,13 @@ const ShapeFactory = ({ type, posX, posY, width, height, color }) => {
           color={color}
         />
       );
-    case "Circle":
+    case "Bomb":
       return (
-      <Plate 
+      <Bomb 
       posX={posX} 
       posY={posY} 
       width={width} 
-      color={color} 
+       
       />
     );
     default:
